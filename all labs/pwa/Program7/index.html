@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Registration</h1>
+        <section>
+        <form id="form">
+            <p>Username</p>
+            <input type="text" id="uname" placeholder="Enter username">
+            <p>Password</p>
+            <input type="password" id="pass" placeholder="Enter password">
+            <br>
+            <input type="submit" value="submit" id="submit">
+        </form>
+    </section>
+    </center>
+    <script>
+        localStorage.setItem("username", "rvce");
+localStorage.setItem("password", "123");
+
+let form = document.getElementById("form");
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let uname = document.getElementById("uname").value;
+    let pass = document.getElementById("pass").value;
+    let username = localStorage.getItem("username");
+    let password = localStorage.getItem("password")
+    if (uname === username && pass == password) {
+        alert("Logged In")
+    } else {
+        alert("Username or password is wrong")
+    }
+})
+    </script>
+</body>
+</html>

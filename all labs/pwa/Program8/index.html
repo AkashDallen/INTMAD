@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Registration</h1>
+        <section>
+        <form id="form">
+            <p>FirstName</p>
+            <input type="text" id="fname" placeholder="Enter Firstname">
+            <p>Last Name</p>
+            <input type="text" id="lname" placeholder="Enter Lastname">
+            <p>Age</p>
+            <input type="age" id="age" placeholder="Enter age">
+            <p>Email</p>
+            <input type="email" id="email" placeholder="Enter email">
+            <p>Number</p>
+            <input type="number" id="email" placeholder="Enter Mobile Number">
+            <br>
+            <input type="submit" value="submit" id="submit">
+        </form>
+    </section>
+    </center>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(e => console.log("Service worker registered"))
+        } else {
+            console.log("Service worker is not supported")
+        }
+        const submit = document.getElementById("submit");
+        submit.addEventListener("click", () => {
+            alert("Details Registered")
+        })
+    </script>
+</body>
+</html>
